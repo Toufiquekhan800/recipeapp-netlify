@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import "./style.css";
 import Menu from './MenuApi';
 import MenuCard from './MenuCard';
@@ -13,6 +13,9 @@ const uniqueList = [
 console.log(uniqueList)
 const Resturant = () => {  
     const [navData, setNavData] = useState(uniqueList);
+    useEffect(() => {
+        setNavData(uniqueList);
+    }, [])
     const [menuData, setMenuData] = useState(Menu);
     console.log(menuData);
 
